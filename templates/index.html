@@ -7,20 +7,23 @@
 
 <h2>Select a Jira Project</h2>
 
-<form>
-    <label for="project">Project:</label>
-    <select id="project" name="project">
+<!--<form>-->
+<!--    <label for="project">Project:</label>-->
+<!--    <select id="project" name="project">-->
 
-        <!-- ✅ Blank default value -->
-        <option value="" selected disabled>-- Select a project --</option>
+<!--        &lt;!&ndash; ✅ Blank default value &ndash;&gt;-->
+<!--        <option value="" selected disabled>&#45;&#45; Select a project &#45;&#45;</option>-->
 
-        {% for proj in projects %}
-            <option value="{{ proj.key }}">
-                {{ proj.name }} ({{ proj.key }})
-            </option>
-        {% endfor %}
-    </select>
-</form>
+<!--        {% for proj in projects %}-->
+<!--            <option value="{{ proj.key }}">-->
+<!--                {{ proj.name }} ({{ proj.key }})-->
+<!--            </option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+<!--</form>-->
+<select id="project">
+    <option value="" selected disabled>--Select a project --</option>
+</select>
 
 </body>
 </html>
