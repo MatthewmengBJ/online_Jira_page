@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h2>Hello Yi Meng!</h2><p>Your Jira PoC tool is running.</p>"
+    return render_template("index.html", project=[])
 
 if __name__ == "__main__":
     app.run()

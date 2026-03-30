@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jira Project Selector</title>
+</head>
+<body>
+
+<h2>Select a Jira Project</h2>
+
+<form>
+    <label for="project">Project:</label>
+    <select id="project" name="project">
+
+        <!-- ✅ Blank default value -->
+        <option value="" selected disabled>-- Select a project --</option>
+
+        {% for proj in projects %}
+            <option value="{{ proj.key }}">
+                {{ proj.name }} ({{ proj.key }})
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+</body>
+</html>
