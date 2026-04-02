@@ -2,28 +2,23 @@
 <html>
 <head>
     <title>Jira Project Selector</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <h2>Select a Jira Project</h2>
 
-<!--<form>-->
-<!--    <label for="project">Project:</label>-->
-<!--    <select id="project" name="project">-->
-
-<!--        &lt;!&ndash; ✅ Blank default value &ndash;&gt;-->
-<!--        <option value="" selected disabled>&#45;&#45; Select a project &#45;&#45;</option>-->
-
-<!--        {% for proj in projects %}-->
-<!--            <option value="{{ proj.key }}">-->
-<!--                {{ proj.name }} ({{ proj.key }})-->
-<!--            </option>-->
-<!--        {% endfor %}-->
-<!--    </select>-->
-<!--</form>-->
 <select id="project">
     <option value="" selected disabled>--Select a project --</option>
 </select>
+
+<br><br>
+<!--Canvas-->
+<div id="chartContainer">
+    <canvas id="statusChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- ✅ 确保 main.js 被正确加载 -->
 <script src="/static/main.js"></script>
 

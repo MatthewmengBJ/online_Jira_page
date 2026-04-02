@@ -79,7 +79,23 @@ def get_jira_projects():
     print(f"✅ Loaded {len(cleaned)} projects from Jira.")
     return cleaned
 
+def get_issues_by_project(project_key):
+    url = f"https://{JIRA_BASE}.atlassian.net/rest/api/3/search/jql"
 
+    payload = {
+        "jql": f"project = {project_key}",
+        "fields": ["status"],
+        "maxResults": 200
+    }
+
+    response = requests.post(
+        url,
+        auth=get_auth(),
+        headers={"Accept": "application/json"},
+        json=payload
+    )
+
+    return response.json().get("issues", [])
 # def search_jira_issues(jql, fields=None):
 #     """
 #     ✅ 通用 JQL 搜索 API
